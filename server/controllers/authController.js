@@ -176,15 +176,18 @@ exports.googleLogin = (req, res) => {
   try {
     console.log("GOOGLE LOGIN ROUTE HIT");
 
-    // Check required Google environment variables
+    console.log("GOOGLE ENV CHECK:", {
+      clientId: !!process.env.GOOGLE_CLIENT_ID,
+      clientSecret: !!process.env.GOOGLE_CLIENT_SECRET,
+      redirectUri: !!process.env.GOOGLE_REDIRECT_URI,
+    });
+
     if (
       !process.env.GOOGLE_CLIENT_ID ||
       !process.env.GOOGLE_CLIENT_SECRET ||
       !process.env.GOOGLE_REDIRECT_URI
     ) {
-      console.error(
-        "Google OAuth environment variables are missing"
-      );
+      console.error("Google OAuth environment variables are missing");
 
       return res.status(500).send(
         "Google authentication is not configured correctly"
@@ -198,21 +201,15 @@ exports.googleLogin = (req, res) => {
 
     const authUrl = googleClient.generateAuthUrl({
       access_type: "offline",
-
-      scope: [
-        "openid",
-        "email",
-        "profile",
-      ],
-
+      scope: ["openid", "email", "profile"],
       prompt: "select_account",
-
       redirect_uri: process.env.GOOGLE_REDIRECT_URI,
     });
 
     console.log("GOOGLE AUTH URL:", authUrl);
 
     return res.redirect(authUrl);
+
   } catch (error) {
     console.error("GOOGLE LOGIN ERROR:", error);
 
