@@ -16,9 +16,6 @@ import Collections from "./pages/Collections";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
-import GoogleSuccess from "./pages/googleSuccess";
-import OAuthSuccess from "./pages/OAuthSuccess";
-
 
 export default function App() {
   return (
@@ -35,8 +32,7 @@ export default function App() {
         <Route path="/constellation" element={<Constellation />} />
         <Route path="/ai-assistant" element={<AIAssistant />} />
         <Route path="/collections" element={<Collections />} />
-        <Route path="/oauth-success" element={<OAuthSuccess />} />
-    
+      
         <Route path="/not-found" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Route>
@@ -46,7 +42,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/google-success" element={<GoogleSuccess />} />
+    
       </Route>
     </Routes>
   );
