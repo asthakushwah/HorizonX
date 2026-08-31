@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import { CollectionsProvider } from "./context/CollectionsContext.jsx";
 import "./index.css";
-import OAuthSuccess from "./pages/OAuthSuccess";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
