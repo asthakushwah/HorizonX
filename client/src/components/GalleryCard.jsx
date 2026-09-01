@@ -1,56 +1,48 @@
 import { motion } from "framer-motion";
-import { Heart, Expand } from "lucide-react";
-import { useCollections } from "../context/CollectionsContext";
+import { Heart, Maximize2 } from "lucide-react";
 
 export default function GalleryCard({ item, onPreview, delay = 0 }) {
-  const { isSaved, toggleSave } = useCollections();
-  const saved = isSaved(item.id);
-
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay }}
-      className="group relative rounded-xl2 border border-border overflow-hidden bg-card card-glow"
+      className="group relative overflow-hidden rounded-xl2 border border-border bg-card"
     >
-      <button
-        onClick={() => onPreview(item)}
-        className="block w-full aspect-square overflow-hidden"
-      >
-        <img
-          src={item.img}
-          alt={item.caption || item.rover || "gallery image"}
-          loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-      </button>
+      {/* IMAGE */}
+      <img
+        src={item.image}
+        alt={item.title}
+        className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+      />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 pointer-events-none">
-        <p className="text-xs text-white/80 line-clamp-2">
-          {item.caption || `${item.rover} · ${item.camera}`}
+      {/* ACTION BUTTONS */}
+      <div className="absolute top-3 right-3 flex gap-2">
+
+        <button
+          type="button"
+          className="w-8 h-8 rounded-full bg-black/60 backdrop-blur flex items-center justify-center border border-white/10 hover:bg-black/80"
+        >
+          <Heart className="w-4 h-4" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => onPreview(item)}
+          className="w-8 h-8 rounded-full bg-black/60 backdrop-blur flex items-center justify-center border border-white/10 hover:bg-black/80"
+        >
+          <Maximize2 className="w-4 h-4" />
+        </button>
+
+      </div>
+
+      {/* TITLE */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+        <p className="text-sm text-white font-medium">
+          {item.title}
         </p>
       </div>
 
-      <div className="absolute top-2 right-2 flex gap-1.5">
-        <button
-          onClick={() => toggleSave(item)}
-          className={`p-2 rounded-full glass border border-border transition-colors ${
-            saved ? "text-red-400 border-red-400/50" : "text-white/70 hover:text-hover"
-          }`}
-          aria-label="Favorite"
-        >
-          <Heart className="w-3.5 h-3.5" fill={saved ? "currentColor" : "none"} />
-        </button>
-      
-        <button
-          onClick={() => onPreview(item)}
-          className="p-2 rounded-full glass border border-border text-white/70 hover:text-hover transition-colors"
-          aria-label="Expand"
-        >
-          <Expand className="w-3.5 h-3.5" />
-        </button>
-      </div>
     </motion.div>
   );
 }

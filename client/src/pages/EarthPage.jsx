@@ -10,7 +10,7 @@ export default function EarthPage() {
   const currentImage = earthImages[sliderIndex];
 
   return (
-    <div className="max-w-7xl mx-auto px-5 lg:px-8 py-16">
+    <div className="max-w-7xl mx-auto px-5 lg:px-8 pt-32 pb-16">
 
       {/* HEADER */}
       <div className="mb-10">
@@ -27,35 +27,39 @@ export default function EarthPage() {
         </p>
       </div>
 
-
       {/* TIMELINE SLIDER */}
       <div className="mb-10 p-6 rounded-xl2 border border-border bg-card">
 
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-4">
 
-          <p className="text-sm text-white/60">
-            Viewing capture
-          </p>
+          <div>
+            <p className="text-sm text-white/60">
+              Viewing capture
+            </p>
 
-          <p className="text-sm font-medium">
-            {currentImage.title}
+            <p className="text-sm font-medium mt-1">
+              {currentImage.title}
+            </p>
+          </div>
+
+          <p className="text-xs text-white/40">
+            {sliderIndex + 1} / {earthImages.length}
           </p>
 
         </div>
 
-
+        {/* SLIDER */}
         <input
           type="range"
           min={0}
           max={earthImages.length - 1}
           value={sliderIndex}
           onChange={(e) => setSliderIndex(Number(e.target.value))}
-          className="w-full accent-hover"
+          className="w-full h-1 cursor-pointer accent-hover"
         />
 
-
         {/* LARGE IMAGE */}
-        <div className="mt-6 rounded-xl2 overflow-hidden border border-border">
+        <div className="mt-6 rounded-xl2 overflow-hidden border border-border bg-black">
 
           <img
             src={currentImage.image}
@@ -67,30 +71,25 @@ export default function EarthPage() {
 
       </div>
 
-
       {/* GALLERY */}
       <h2 className="font-display text-xl font-semibold mb-5">
         Latest Earth images
       </h2>
 
-
       <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
 
         {earthImages.map((item, i) => (
-
           <GalleryCard
             key={i}
             item={item}
             onPreview={setPreview}
             delay={(i % 8) * 0.04}
           />
-
         ))}
 
       </div>
 
-
-      {/* MODAL */}
+      {/* IMAGE MODAL */}
       <Modal
         item={preview}
         onClose={() => setPreview(null)}
