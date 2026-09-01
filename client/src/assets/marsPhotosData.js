@@ -37,7 +37,7 @@ export const marsPhotos = [
     camera: "MAST",
     sol: 1000,
     date: "2014-05-01",
-    img: curiosity1,
+    image: curiosity1,
   },
   {
     id: "curiosity-2",
@@ -45,7 +45,7 @@ export const marsPhotos = [
     camera: "NAVCAM",
     sol: 1050,
     date: "2014-06-15",
-    img: curiosity2,
+    image: curiosity2,
   },
   {
     id: "curiosity-3",
@@ -53,7 +53,7 @@ export const marsPhotos = [
     camera: "MAHLI",
     sol: 1100,
     date: "2014-08-10",
-    img: curiosity3,
+    image: curiosity3,
   },
   {
     id: "curiosity-4",
@@ -61,7 +61,7 @@ export const marsPhotos = [
     camera: "MAST",
     sol: 1200,
     date: "2014-10-20",
-    img: curiosity4,
+    image: curiosity4,
   },
   {
     id: "curiosity-5",
@@ -69,7 +69,7 @@ export const marsPhotos = [
     camera: "FHAZ",
     sol: 1300,
     date: "2015-01-12",
-    img: curiosity5,
+    image: curiosity5,
   },
   {
     id: "curiosity-6",
@@ -77,7 +77,7 @@ export const marsPhotos = [
     camera: "NAVCAM",
     sol: 1400,
     date: "2015-04-18",
-    img: curiosity6,
+    image: curiosity6,
   },
 
   // =====================
@@ -90,7 +90,7 @@ export const marsPhotos = [
     camera: "MAST",
     sol: 50,
     date: "2021-04-10",
-    img: perseverance1,
+    image: perseverance1,
   },
   {
     id: "perseverance-2",
@@ -98,7 +98,7 @@ export const marsPhotos = [
     camera: "NAVCAM",
     sol: 100,
     date: "2021-05-20",
-    img: perseverance2,
+    image: perseverance2,
   },
   {
     id: "perseverance-3",
@@ -106,7 +106,7 @@ export const marsPhotos = [
     camera: "MAST",
     sol: 200,
     date: "2021-08-15",
-    img: perseverance3,
+    image: perseverance3,
   },
   {
     id: "perseverance-4",
@@ -114,7 +114,7 @@ export const marsPhotos = [
     camera: "FHAZ",
     sol: 300,
     date: "2022-01-10",
-    img: perseverance4,
+    image: perseverance4,
   },
   {
     id: "perseverance-5",
@@ -122,7 +122,7 @@ export const marsPhotos = [
     camera: "MAHLI",
     sol: 500,
     date: "2022-07-22",
-    img: perseverance5,
+    image: perseverance5,
   },
   {
     id: "perseverance-6",
@@ -130,7 +130,7 @@ export const marsPhotos = [
     camera: "NAVCAM",
     sol: 700,
     date: "2023-02-14",
-    img: perseverance6,
+    image: perseverance6,
   },
 
   // =====================
@@ -143,7 +143,7 @@ export const marsPhotos = [
     camera: "FHAZ",
     sol: 100,
     date: "2004-05-10",
-    img: opportunity1,
+    image: opportunity1,
   },
   {
     id: "opportunity-2",
@@ -151,7 +151,7 @@ export const marsPhotos = [
     camera: "NAVCAM",
     sol: 250,
     date: "2004-09-15",
-    img: opportunity2,
+    image: opportunity2,
   },
   {
     id: "opportunity-3",
@@ -159,7 +159,7 @@ export const marsPhotos = [
     camera: "MAST",
     sol: 500,
     date: "2005-04-20",
-    img: opportunity3,
+    image: opportunity3,
   },
   {
     id: "opportunity-4",
@@ -167,7 +167,7 @@ export const marsPhotos = [
     camera: "FHAZ",
     sol: 1000,
     date: "2006-08-12",
-    img: opportunity4,
+    image: opportunity4,
   },
   {
     id: "opportunity-5",
@@ -175,7 +175,7 @@ export const marsPhotos = [
     camera: "NAVCAM",
     sol: 2000,
     date: "2010-03-18",
-    img: opportunity5,
+    image: opportunity5,
   },
   {
     id: "opportunity-6",
@@ -183,7 +183,7 @@ export const marsPhotos = [
     camera: "MAST",
     sol: 4000,
     date: "2015-06-25",
-    img: opportunity6,
+    image: opportunity6,
   },
 
   // =====================
@@ -196,7 +196,7 @@ export const marsPhotos = [
     camera: "FHAZ",
     sol: 50,
     date: "2004-02-10",
-    img: spirit1,
+    image: spirit1,
   },
   {
     id: "spirit-2",
@@ -204,7 +204,7 @@ export const marsPhotos = [
     camera: "NAVCAM",
     sol: 200,
     date: "2004-06-15",
-    img: spirit2,
+    image: spirit2,
   },
   {
     id: "spirit-3",
@@ -212,7 +212,7 @@ export const marsPhotos = [
     camera: "MAST",
     sol: 500,
     date: "2005-01-20",
-    img: spirit3,
+    image: spirit3,
   },
   {
     id: "spirit-4",
@@ -220,7 +220,7 @@ export const marsPhotos = [
     camera: "FHAZ",
     sol: 1000,
     date: "2006-03-12",
-    img: spirit4,
+    image: spirit4,
   },
   {
     id: "spirit-5",
@@ -228,7 +228,7 @@ export const marsPhotos = [
     camera: "NAVCAM",
     sol: 1500,
     date: "2007-05-18",
-    img: spirit5,
+    image: spirit5,
   },
   {
     id: "spirit-6",
@@ -236,6 +236,6 @@ export const marsPhotos = [
     camera: "MAST",
     sol: 2000,
     date: "2009-01-05",
-    img: spirit6,
+    image: spirit6,
   },
 ];
